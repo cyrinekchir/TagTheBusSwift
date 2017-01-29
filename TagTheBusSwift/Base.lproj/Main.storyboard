@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yVw-Qx-pxz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="YhN-Yr-MIM">
+            <objects>
+                <viewController id="qfI-wp-DO7" customClass="MapViewController" customModule="TagTheBusSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XUc-YD-hQr"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVq-MQ-5m3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NPs-4o-fZr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mer-cC-6V9">
+                                <frame key="frameInset" minY="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UPR-b6-SjS"/>
+                    <connections>
+                        <outlet property="mapView" destination="mer-cC-6V9" id="5tV-RL-Kvx"/>
+                        <segue destination="ezj-4I-Ny0" kind="show" identifier="SegueName" id="Y6z-J9-Vvh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwm-9i-I01" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2257.5" y="931.69014084507046"/>
+        </scene>
+        <!--Tag the bus-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TagTheBusSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-jO-y9B">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stationCell" rowHeight="68" id="5MV-Il-Vvn" customClass="StationCell" customModule="TagTheBusSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="343" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5MV-Il-Vvn" id="tha-ch-jv1">
+                                            <frame key="frameInset" width="343" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-Su-Q4o">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="A07-pj-Btp"/>
+                                                        <constraint firstAttribute="width" constant="180" id="aBG-jT-lra"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="9wr-Mr-siM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="loJ-BO-Cfg"/>
+                                                        <constraint firstAttribute="width" constant="46" id="tq4-uo-t54"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="iuG-dl-WPf">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="LML-YP-CuK"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="aYY-Ey-oge"/>
+                                                        <constraint firstAttribute="height" constant="59" id="e6O-QX-JQ3"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="59" id="uEc-Ec-dly"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMD-ER-fre">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="174" id="qCg-LS-0vJ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="ykh-xT-xrf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fMD-ER-fre" firstAttribute="centerX" secondItem="tha-ch-jv1" secondAttribute="centerX" id="Aa7-rP-VoD"/>
+                                                <constraint firstItem="a4c-Su-Q4o" firstAttribute="top" secondItem="fMD-ER-fre" secondAttribute="bottom" constant="5" id="DWT-fh-hRd"/>
+                                                <constraint firstItem="a4c-Su-Q4o" firstAttribute="centerX" secondItem="tha-ch-jv1" secondAttribute="centerX" id="Jyb-hA-Sa5"/>
+                                                <constraint firstItem="iuG-dl-WPf" firstAttribute="top" secondItem="tha-ch-jv1" secondAttribute="top" constant="5" id="XwU-Pv-Q0b"/>
+                                                <constraint firstItem="9wr-Mr-siM" firstAttribute="trailing" secondItem="tha-ch-jv1" secondAttribute="trailingMargin" id="ZOt-z1-nDQ"/>
+                                                <constraint firstItem="9wr-Mr-siM" firstAttribute="centerY" secondItem="tha-ch-jv1" secondAttribute="centerY" id="aQ4-gL-UCk"/>
+                                                <constraint firstItem="iuG-dl-WPf" firstAttribute="leading" secondItem="tha-ch-jv1" secondAttribute="leading" id="anE-bX-uyx"/>
+                                                <constraint firstItem="fMD-ER-fre" firstAttribute="top" secondItem="tha-ch-jv1" secondAttribute="topMargin" id="lph-mo-N3v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="a4c-Su-Q4o" id="rsq-6S-How"/>
+                                            <outlet property="nameLabel" destination="fMD-ER-fre" id="fKV-5O-iPa"/>
+                                            <segue destination="ezj-4I-Ny0" kind="show" identifier="stationDetail" id="8fK-74-cJD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VAH-Y1-Qwt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8Oi-Db-bO7"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jln-OC-MvK">
+                                <frame key="frameInset" minX="-2" minY="72" height="44" maxX="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ozA-K6-x3a"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f3K-jO-y9B" secondAttribute="bottom" constant="20" id="7F0-a8-qmo"/>
+                            <constraint firstItem="f3K-jO-y9B" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CrF-N2-tQs"/>
+                            <constraint firstItem="f3K-jO-y9B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="F7z-qz-Rq7"/>
+                            <constraint firstItem="f3K-jO-y9B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NTm-J3-eQh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tag the bus" id="IJN-rl-WmR">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="HV9-Tb-45l"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="Jln-OC-MvK" id="QA0-V9-j2R"/>
+                        <outlet property="tableView" destination="f3K-jO-y9B" id="w3a-43-Han"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071.875" y="136.26760563380282"/>
+        </scene>
+        <!--Station Detail Controller-->
+        <scene sceneID="3Ji-nK-QKM">
+            <objects>
+                <viewController id="ezj-4I-Ny0" customClass="StationDetailController" customModule="TagTheBusSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j21-wg-dlf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lji-xX-89F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7mi-Ff-fsG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agX-Ee-vIu">
+                                <frame key="frameInset" minX="124" minY="400" width="180" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11T-FQ-mam">
+                                <frame key="frameInset" minX="20" minY="72" width="284" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uhe-b3-RIR">
+                                <frame key="frameInset" minY="114" width="320" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO9-oA-N6J">
+                                <frame key="frameInset" minX="124" minY="443" width="180" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnJ-y7-vHj">
+                                <frame key="frameInset" minX="20" minY="400" width="56" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-b0-VyP">
+                                <frame key="frameInset" minX="16" minY="450" width="56" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="busesLabel" destination="DO9-oA-N6J" id="yg6-DF-p1c"/>
+                        <outlet property="cityLabel" destination="agX-Ee-vIu" id="Qc9-rN-Iu0"/>
+                        <outlet property="mapView" destination="Uhe-b3-RIR" id="Jq9-e4-hPt"/>
+                        <outlet property="nameLabel" destination="11T-FQ-mam" id="slW-Xz-eIe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDe-HI-Fhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3033.75" y="128.87323943661971"/>
+        </scene>
+        <!--list-->
+        <scene sceneID="7iy-rj-seJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mS3-dy-u3s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="list" image="list" id="QTn-Cg-IJM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EfM-tF-FTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.095035171870000004" green="0.20010515579999999" blue="0.73952323720000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.095035171870000004" green="0.20010515579999999" blue="0.73952323720000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lwG-9u-tsP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nax-Kq-lmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132.5" y="136.26760563380282"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Nnw-ed-AAC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yVw-Qx-pxz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="X8l-6Y-8xV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mS3-dy-u3s" kind="relationship" relationship="viewControllers" id="XeE-tY-Dna"/>
+                        <segue destination="dpn-vM-GWJ" kind="relationship" relationship="viewControllers" id="rsF-Qf-gz1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLL-en-iai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="136.26760563380282"/>
+        </scene>
+        <!--map-->
+        <scene sceneID="cXG-nC-Tdf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dpn-vM-GWJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="map" image="map" selectedImage="map" id="Wm3-ur-x8y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fbN-dc-hd0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.095035171870000004" green="0.20010515579999999" blue="0.73952323720000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.095035171870000004" green="0.20010515579999999" blue="0.73952323720000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qfI-wp-DO7" kind="relationship" relationship="rootViewController" id="adF-oB-1Pg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNw-Qg-cIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="931.69014084507046"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bus" width="75" height="75"/>
+        <image name="list" width="24" height="24"/>
+        <image name="map" width="24" height="19"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8fK-74-cJD"/>
+    </inferredMetricsTieBreakers>
+</document>
